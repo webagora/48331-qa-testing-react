@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'
 import './App.css';
 
 class App extends React.Component {
@@ -7,7 +8,11 @@ class App extends React.Component {
   };
 
   handleClick = () =>{
-    console.log('click');
+    axios.get("https://randomuser.me/api/")
+    .then((res) => {
+      debugger
+      console.log('res.data: ', res.data);
+    });
   }
 
   render() {
