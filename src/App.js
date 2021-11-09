@@ -22,6 +22,7 @@ class App extends React.Component {
     return (
         <div className="App">
           <button onClick ={this.handleClick}>api call</button>
+          {this.state.person && <div>{this.state.person.name.first}</div>}
         </div>
     );
   }
