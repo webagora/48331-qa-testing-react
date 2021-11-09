@@ -2,23 +2,21 @@ import React from 'react';
 import axios from 'axios'
 import './App.css';
 
+const getPerson = () => {
+
+  return axios.get("https://randomuser.me/api/");
+  
+}
+
 class App extends React.Component {
   state = {
     person: null
   };
 
-  getPerson = () => {
-    axios.get("https://randomuser.me/api/")
-    .then((res) => {
-      // debugger
-      this.setState({
-        person:res.data.results[0] 
-      })
-    });
-  }
-
   handleClick = () =>{
-    this.getPerson();
+    getPerson().then( res  => {
+        console.log('res.data.results: ', res.data.results);
+    });
   }
 
   render() {
