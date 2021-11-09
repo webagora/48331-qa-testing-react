@@ -1,12 +1,7 @@
 import React from 'react';
-import axios from 'axios'
 import './App.css';
 
-const getPerson = () => {
-
-  return axios.get("https://randomuser.me/api/");
-  
-}
+import getPerson from './api/getPerson';
 
 class App extends React.Component {
   state = {
@@ -16,6 +11,10 @@ class App extends React.Component {
   handleClick = () =>{
     getPerson().then( res  => {
         console.log('res.data.results: ', res.data.results);
+        this.setState({
+          ...this.state,
+          person: res.data.results[0]
+        })
     });
   }
 
