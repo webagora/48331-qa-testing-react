@@ -1,4 +1,4 @@
-# QA 3.2.1 - Reducer 
+# QA 3.3.1 Testing React 
 
 -   [Youtube - 3.3.1 - Q&A Testing React](https://youtu.be/Z7S8k4lU6IU)
 
