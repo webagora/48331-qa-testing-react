@@ -7,7 +7,7 @@ class App extends React.Component {
     person: null
   };
 
-  handleClick = () =>{
+  getPerson = () => {
     axios.get("https://randomuser.me/api/")
     .then((res) => {
       // debugger
@@ -15,6 +15,10 @@ class App extends React.Component {
         person:res.data.results[0] 
       })
     });
+  }
+
+  handleClick = () =>{
+    this.getPerson();
   }
 
   render() {
