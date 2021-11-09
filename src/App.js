@@ -10,13 +10,15 @@ class App extends React.Component {
   handleClick = () =>{
     axios.get("https://randomuser.me/api/")
     .then((res) => {
-      debugger
-      console.log('res.data: ', res.data);
+      // debugger
+      this.setState({
+        person:res.data.results[0] 
+      })
     });
   }
 
   render() {
-    console.log(this.state.person);
+    console.log('this.state.person: ', this.state.person );
     return (
         <div className="App">
           <button onClick ={this.handleClick}>api call</button>
