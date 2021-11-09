@@ -9,11 +9,11 @@ class App extends React.Component {
   };
 
   handleClick = () =>{
-    getPerson().then( res  => {
-        console.log('res.data.results: ', res.data.results);
+    getPerson().then( (person ) => {
+        // console.log('res.data.results: ', res.data.results);
         this.setState({
           ...this.state,
-          person: res.data.results[0]
+          person: person
         })
     });
   }
