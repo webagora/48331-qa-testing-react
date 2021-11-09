@@ -1,12 +1,23 @@
-
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-      <div className="App">
-        <h1>Testing React QA </h1>
-      </div>
-  );
+class App extends React.Component {
+  state = {
+    person: null
+  };
+
+  handleClick = () =>{
+    console.log('click');
+  }
+
+  render() {
+    console.log(this.state.person);
+    return (
+        <div className="App">
+          <button onClick ={this.handleClick}>api call</button>
+        </div>
+    );
+  }
 }
 
 export default App;
